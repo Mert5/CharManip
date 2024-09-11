@@ -27,7 +27,6 @@ int main(){
     }
     
 
-
     // Check if character is alphabetic
     std::cout << std::endl;
     std::cout << "Being used the command => std::isalpha : " << std::endl;
@@ -43,7 +42,6 @@ int main(){
         std::cout << 'e' << " is not alphabetic. " << std::endl;
     }
     
-
 
     // Check if a character is blank
     std::cout << std::endl;
@@ -62,6 +60,72 @@ int main(){
     }
     std:: cout << "In total there are " << blank_count << " blank characters in message. " << std::endl;
 
+
+    // Lets check uppercase and lowercase characters
+    std::cout << "Being used commands std::isupper and std::islower : " << std::endl;
+
+    char astring[] {"C++ language has a lot of users on the Planet. "};
+    size_t uppercount {};
+    size_t lowercount {};
+
+    for (size_t i{}; i < std::size(astring) ; i++){ //for ( auto letter : astring)  => also works
+        if(std::isupper(astring[i])){
+            std::cout << " Uppercase letter : " << astring[i] << std::endl;
+            uppercount++;
+        }
+        if(std::islower(astring[i])){
+            //std::cout << " Lowercase letter : " << astring[i] << std::endl;
+            lowercount++;
+        }
+    }
+
+    std::cout << " Length of sentence : " << std::size(astring) << std::endl;
+    std::cout << " Number of uppercase letter : " << uppercount << std::endl;
+    std::cout << " Number of lowercase letter : " << lowercount << std::endl;
+    
+
+    // Now let's check if a character is a digit or not
+    std::cout << "Being used the command std::isdigit : " << std::endl;
+
+    char event []{"Man had an accident. Car was burning and the man was trying to get out. Everybody was watching except 1. "};
+    std::cout << "Event : " << event << std::endl;
+
+    size_t digit_count{} ;
+
+    for(auto chr : event){
+        if(std::isdigit(chr)){
+            std::cout << chr << "-" << std::endl;
+            digit_count++;
+        }
+    }
+
+    std::cout << "There are " << digit_count << " digits in this situation. " << std::endl;
+    */
+
+
+    // Turning a character to lowercase or uppercase
+    std::cout << std::endl;
+    std::cout << "Being used std::tolower and std::toupper commands: " << std::endl;
+
+    char sentences[] {"Look around. Search, find and improve it."};
+    // State is : lOOK AROUND. sEARCH, FIND AND IMPROVE IT. => you should see this as an output below
+    char newsentences[std::size(sentences)];
+    std::cout << "State is : " << sentences << std::endl;
+
+    for(size_t j{}; j < std::size(sentences) ; ++j){
+        if(std::isblank(sentences[j]) || !(std::isalnum(sentences[j]))){
+            newsentences[j] = sentences[j];
+        }
+        if(std::isupper(sentences[j])){
+            newsentences[j] = std::tolower(sentences[j]);
+        }
+        if(std::islower(sentences[j])){
+            
+            newsentences[j] = std::toupper(sentences[j]);
+        }
+    }
+
+    std::cout << "State is : " << newsentences << std::endl;
 
     return 0;
 }
