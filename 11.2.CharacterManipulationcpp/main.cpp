@@ -1,3 +1,7 @@
+
+// Shows the Character Manipulation in C++.
+// Considered some of commands
+
 #include <iostream>
 //include <cctype>
 
