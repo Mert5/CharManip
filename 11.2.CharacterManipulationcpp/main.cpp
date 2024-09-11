@@ -8,10 +8,10 @@ int main(){
     std::cout << std::endl;
     std::cout << "Being used the command => std::isalnum : " << std::endl;
 
-    std::cout << "C is alphanumeric : " << std::boolalpha << static_cast<bool>(std::isalnum('C')) << std::endl;
-    std::cout << "^ is alphanumeric : " << std::boolalpha << static_cast<bool>(std::isalnum('^')) << std::endl;
-    //std::cout << "C is alphanumeric : " << std::isalnum('C') << std::endl;    // original
-    //std::cout << "^ is alphanumeric : " << std::isalnum('^') << std::endl;    // original
+    std::cout << "C is alphanumeric : " << std::boolalpha << static_cast<bool>(std::isalnum('C')) << std::endl; // to see as true or false
+    std::cout << "^ is alphanumeric : " << std::boolalpha << static_cast<bool>(std::isalnum('^')) << std::endl; // to see as true or false
+    //std::cout << "C is alphanumeric : " << std::isalnum('C') << std::endl;    // it will show as boolean
+    //std::cout << "^ is alphanumeric : " << std::isalnum('^') << std::endl;    // it will show as boolean
 
     // Can use this as a test condition
     char input_char {'*'};
